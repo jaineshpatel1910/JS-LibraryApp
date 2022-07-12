@@ -14,7 +14,6 @@ function Display() {
 
 // add methods to display prototype
 Display.prototype.add = function (book) {
-    console.log("Adding to UI")
     tableBody = document.getElementById("tableBody");
     let uiString = `
             <tr>
@@ -57,8 +56,6 @@ let libraryForm = document.getElementById("libraryForm");
 libraryForm.addEventListener("submit", libraryFormSubmit);
 
 function libraryFormSubmit(e) {
-    console.log("first")
-
     let name = document.getElementById("bookName").value;
     let author = document.getElementById("author").value;
     let type;
@@ -78,7 +75,6 @@ function libraryFormSubmit(e) {
     }
 
     let book = new Book(name, author, type)
-    console.log(book, "book");
 
     let display = new Display();
     if (display.validate(book)) {
